@@ -2,6 +2,7 @@
 
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -103,5 +104,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Add your OpenWeatherMap API key here
-OPENWEATHER_API_KEY = '0004d0bdab0d105d5094f9d52954a510'
+OPENWEATHER_API_KEY = config('OPENWEATHER_API_KEY')
