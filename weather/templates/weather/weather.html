@@ -17,7 +17,7 @@
       <img src="{% static image_url %}" alt="Weather Image" />
     </div>
     <div class="search-container">
-      <form method="post" action="{% url 'get_weather' %}">
+      <form method="post">
         {% csrf_token %}
         <input type="text" id="location" name="location" required />
         <button type="submit">Search</button>

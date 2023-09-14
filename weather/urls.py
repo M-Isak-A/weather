@@ -1,8 +1,8 @@
 from django.urls import path
-from . import views
+# Import the get_weather function from your views module
+from .views import get_weather
 
 urlpatterns = [
     # Set landing page to Leicester weather
-    path('', views.get_weather, name='landing_page'),
-    path('get_weather/', views.get_weather, name='get_weather'),
+    path('', get_weather, name='landing_page'),
 ]
