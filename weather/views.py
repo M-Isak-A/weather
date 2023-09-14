@@ -1,9 +1,7 @@
-# weather/views.py
-
 import requests
-from django.shortcuts import render, redirect
-from .models import Weather
-from django.conf import settings  # Import Django settings
+from django.shortcuts import render
+from weather.models import Weather
+from django.conf import settings
 
 
 def get_image_for_weather(condition):
@@ -33,10 +31,12 @@ def get_weather(request):
                 location=location, defaults={
                     'temperature': temperature, 'condition': condition}
             )
+
+            image_url = get_image_for_weather(condition)  # Get the image URL
         else:
             weather_data = None
+            image_url = get_image_for_weather('default')
 
-        image_url = get_image_for_weather(condition)  # Get the image URL
         return render(request, 'weather/weather.html', {'weather': weather_data, 'image_url': image_url})
 
     # Default location: Leicester
