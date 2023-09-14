@@ -1,0 +1,57 @@
+/* gradient-background.css - Style 3 - Gradient Background */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #4CAF50, #2196F3);
+    color: #fff;
+}
+
+.weather-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-container {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+input[type="text"] {
+    font-size: 16px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #fff;
+    color: #2196F3;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007BFF;
+    color: #fff;
+}

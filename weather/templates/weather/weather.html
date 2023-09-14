@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/weather.css' %}"
+    />
+  </head>
+  <body>
+    <div class="weather-container">
+      <h1>Weather in {{ weather.location }}</h1>
+      <p>Temperature: {{ weather.temperature }}°C</p>
+      <p>Condition: {{ weather.condition }}</p>
+      <img src="{% static image_url %}" alt="Weather Image" />
+    </div>
+    <div class="search-container">
+      <form method="post" action="{% url 'get_weather' %}">
+        {% csrf_token %}
+        <input type="text" id="location" name="location" required />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </body>
+</html>
